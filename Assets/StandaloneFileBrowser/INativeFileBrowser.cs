@@ -2,19 +2,37 @@
 
 namespace NativeFileBrowser
 {
-	public interface INativeFileBrowser
-	{
-		string[] OpenFilePanel(string title, ExtensionFilter[] extensions, bool multiselect);
+    public interface INativeFileBrowser
+    {
+        string[] OpenFilePanel(
+            string title,
+            bool multiselect,
+            string defaultPath = null,
+            ExtensionFilter[] extensions = null
+        );
 
-		void OpenFilePanelAsync(string title, ExtensionFilter[] extensions, bool multiselect,
-			Action<string[]> cb);
+        void OpenFilePanelAsync(
+            string title,
+            bool multiselect,
+            Action<string[]> cb,
+            ExtensionFilter[] extensions = null
+        );
 
-		string[] OpenFolderPanel(string title);
-		void OpenFolderPanelAsync(string title, Action<string[]> callback);
+        string[] OpenFolderPanel(string title, string defaultPath = null);
+        void OpenFolderPanelAsync(string title, Action<string[]> callback);
 
-		string SaveFilePanel(string title, string defaultName, ExtensionFilter[] extensions);
+        string SaveFilePanel(
+            string title,
+            string defaultName,
+            string defaultPath = null,
+            ExtensionFilter[] extensions = null
+        );
 
-		void SaveFilePanelAsync(string title, string defaultName, ExtensionFilter[] extensions,
-			Action<string> cb);
-	}
+        void SaveFilePanelAsync(
+            string title,
+            string defaultName,
+            Action<string> cb,
+            ExtensionFilter[] extensions = null
+        );
+    }
 }
