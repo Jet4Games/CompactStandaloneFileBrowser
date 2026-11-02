@@ -6,4 +6,4 @@ _Inspired by:_ https://github.com/gkngkc/UnityStandaloneFileBrowser
 - No additional plugins required.
 - Save File dialog, Open file/files dialog, Select folder dialog.
 
-**INSTALL URL:**  https://github.com/eastafiev/CompactStandaloneFileBrowser.git?path=Assets/StandaloneFileBrowser
+**INSTALL URL:**  https://github.com/Jet4Games/CompactStandaloneFileBrowser.git?path=Assets/StandaloneFileBrowser
