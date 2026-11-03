@@ -74,38 +74,14 @@ namespace NativeFileBrowser
             NativeFileBrowser.OpenFolderPanelAsync(title, cb);
         }
 
-        /// <summary>
-        /// Native save file dialog
-        /// </summary>
-        /// <param name="title">Dialog title</param>
-        /// <param name="defaultName">Default file name</param>
-        /// <param name="filterName">filter name</param>
-        /// <param name="extension">File extension</param>
-        /// <returns>Returns chosen path. Empty string when cancelled</returns>
-        public static string SaveFilePanel(
-            string title,
-            string defaultName,
-            string filterName,
-            string extension = null
-        )
-        {
-            var extensions = string.IsNullOrEmpty(extension)
-                ? null
-                : new[] { new ExtensionFilter(filterName, extension) };
-            return SaveFilePanel(title, defaultName, extensions);
-        }
-
         public static string SaveFilePanel(
             string title,
             string defaultName,
             string filterName,
             string defaultPath,
-            string extension = null
+            ExtensionFilter[] extensions = null
         )
         {
-            var extensions = string.IsNullOrEmpty(extension)
-                ? null
-                : new[] { new ExtensionFilter(filterName, extension) };
             return SaveFilePanel(title, defaultName, defaultPath, extensions);
         }
 
